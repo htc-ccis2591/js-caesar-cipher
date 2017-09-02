@@ -9,20 +9,20 @@ For the purposes of this assignment, we will call unencrypted text “plaintext�
 
 The encryption scheme for this assignment is a simple substitution cipher. The scheme works by replacing each character in the plaintext with the corresponding character in a “ciphertext alphabet”, which is always the same length as the plaintext alphabet.  
 
-For example:
-plaintext alphabet:  ABCDEFGHIJKLMNOPQRSTUVWXYZ
-ciphertext alphabet: KLMNOPQRSTUVWXYZABCDEFGHIJ
+For example:  
+plaintext alphabet:  ABCDEFGHIJKLMNOPQRSTUVWXYZ  
+ciphertext alphabet: KLMNOPQRSTUVWXYZABCDEFGHIJ  
 
 Given the ciphertext alphabet, if we encrypted the string “writing code is cool” it would become “gbsdsxq myno sc myyv”. This is because we replace “w” with “g”, “r” with “b” and so forth. Decryption works exactly the same way, but in reverse. Thus, “myyv” using the above alphabets becomes “cool”.
 
 ## Generating a Ciphertext Alphabet from a Key
 In your program, rather than having the user specify a ciphertext alphabet directly, you will instead have the user enter a key that will be used to generate the ciphertext alphabet. We will start by setting our ciphertext alphabet equal to the plaintext alphabet. Then, we will move each character to the right by the number of letters specified by the key.  When we get to the end, the letters wrap around. 
 
-So for example, if our key is 3, we will start with:
-ciphertext alphabet:  ABCDEFGHIJKLMNOPQRSTUVWXYZ
+So for example, if our key is 3, we will start with:  
+ciphertext alphabet:  ABCDEFGHIJKLMNOPQRSTUVWXYZ  
 
-Then move each letter to the left 3 positions:
-ciphertext alphabet:  XYZABCDEFGHIJKLMNOPQRSTUVW
+Then move each letter to the left 3 positions:  
+ciphertext alphabet:  XYZABCDEFGHIJKLMNOPQRSTUVW  
 
 Note that the A is shifted to the right 3 letters, and the last 3 letters of the alphabet (XYZ) have moved to the beginning.
 
@@ -35,9 +35,9 @@ To encrypt or decrypt the text entered by the user, you should use the following
 - If it is a space, keep the space.
 - If it is anything else, skip it.  It should not appear in the output.
 
-So for example, if we had the alphabets below (key is 16):
-plaintext alphabet:  ABCDEFGHIJKLMNOPQRSTUVWXYZ
-ciphertext alphabet: KLMNOPQRSTUVWXYZABCDEFGHIJ
+So for example, if we had the alphabets below (key is 16):  
+plaintext alphabet:  ABCDEFGHIJKLMNOPQRSTUVWXYZ  
+ciphertext alphabet: KLMNOPQRSTUVWXYZABCDEFGHIJ  
 
 And they entered “Writing code is,!;~;;?5555 Cool”, we’d get “Gbsdsxq myno sc Myyv” as output, because we are preserving spaces, but removing any other character not in the alphabet.
 
