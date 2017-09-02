@@ -39,18 +39,18 @@ So for example, if we had the alphabets below (key is 16):
 plaintext alphabet:  ABCDEFGHIJKLMNOPQRSTUVWXYZ  
 ciphertext alphabet: KLMNOPQRSTUVWXYZABCDEFGHIJ  
 
-And they entered “Writing code is,!;~;;?5555 Cool”, we’d get “Gbsdsxq myno sc Myyv” as output, because we are preserving spaces, but removing any other character not in the alphabet.
+And they entered “Writing code is,!;~;;?5555 Cool”, we’d get “Gbsdsxq myno sc Myyv” as output, because we are preserving spaces, but removing any other characters not found in the alphabet.
 
 ### HTML Page
-Create an HTML page with a simple form to accept input of a key (numeric 1-25) and a text message (of any length). There should be 3 buttons: Encrypt, Decrypt, & Reset. Also add some basic *instruction* text to the page so that anyone browsing to this will know what it does. Below the form, add a `div` element for the output.
+Create an HTML page with a simple form to accept input of a key (numeric 1-25) and a text message (of any length). There should be 3 buttons: Encrypt, Decrypt, & Reset. Also add some basic *instruction* text to the page so that anyone browsing to this page will know what it is for and how it works. 
 
-It will be helpful to add id attributes onto the div, buttons, and input controls to easily identify and access them from JavaScript.
+Below the form, add a `div` element for the output. It will be helpful to add id attributes onto the div, buttons, and input controls to easily identify and access them from JavaScript.
 
 ### Basic CSS
 Use CSS to make the form display nicely. If you want, you can use Bootstrap or another library to help with your display. If not, you will need to write some basic CSS yourself. 
 
 ### JS Code
-Remember to write good ES6 JavaScript code using best practices discussed in class and in the readings.
+Remember to write good ES6 JavaScript code using best practices discussed in class and in the readings. I will expect you to create and use functions with input parameters and return values to structure your code. This problem is *very* complex if you do not break it down into small functions to handle the individual tasks.
 
 #### Get the input values
 First, we need to set-up our buttons to get the value of the input controls so that we can use them in the encryption/decryption code. Set up a click handler for each button that will get each of the form fields and log the value to the console. 
@@ -66,8 +66,8 @@ For example:
 Note: If you use a form input type of "reset" you do not need to write code to do this. However for this assignment, I want to see that you are able to set the input field values through your JS code.
 
 
-#### Encrypt & Decrypt 
-Once you are getting your form data, you can now use that to encrypt or decrypt the message.  To do the encryption or decryption, you will need to use arrays following the instructions described below.  I will expect you to create and use functions with input parameters and return values to structure your code.
+#### Encrypt & decrypt 
+Once you are getting your form data, you can work on the code to encrypt or decrypt the message.  To do the encryption or decryption, you will need to use arrays to create the "plaintext" and "ciphertext" alphabets as discussed above.  
 
 I reccommend that you begin by creating an array variable for the "plaintext" alphabet, as this should never change. (Be very careful setting this up, as missing a letter or swapping letters will cause incorrect translations!) Then write a function to generate the "ciphertext" alphabet by shifting the letters by the amount specified by the key.
 
@@ -75,7 +75,7 @@ Once you have the plaintext alphabet and the correct ciphertext alphabets, you c
 
 
 ## Helpful Tips 
-To get this code working correctly, you'll want to know if a letter is uppercase or lowercase. We learned that a string has a `toUpperCase()` method. We can obviously use this to change a letter (or String) to upperCase, but we can also use it to determine if the letter was upper case or not.
+To get this code working correctly, you'll want to know if a letter is uppercase or lowercase. We learned that a string has a `toUpperCase()` method. We can obviously use this to change a letter (or String) to upperCase, but we can also use it to determine if the letter was upper case or not to begin with.
 
 ```
 let letter = "a";
@@ -86,4 +86,6 @@ if (letter === letter.toUpperCase()) {
 }
 ```
 
-If the letter was upper case, you want the translated letter to also be uppercase.  If not, you will need to use the String `toLowerCase()` method to change the letter to lower case before writing it to the output.  __Remember that you will want an uppercase letter to find the value in the plaintext alphabet.__
+If the letter was upper case, you want the translated letter to also be uppercase.  If not, you will need to use the String `toLowerCase()` method to change the letter to lower case before writing it to the output.  
+
+__Remember that you will need an uppercase letter when looking through the plaintext alphabet for a match.__
