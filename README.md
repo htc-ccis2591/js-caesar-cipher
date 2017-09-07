@@ -19,9 +19,9 @@ Given the ciphertext alphabet, if we encrypted the string “writing code is coo
 In your program, rather than having the user specify a ciphertext alphabet directly, you will instead have the user enter a key that will be used to generate the ciphertext alphabet. We will start by setting our ciphertext alphabet equal to the plaintext alphabet. Then, we will move each character to the right by the number of letters specified by the key.  When we get to the end, the letters wrap around. 
 
 So for example, if our key is 3, we will start with:  
-ciphertext alphabet:  ABCDEFGHIJKLMNOPQRSTUVWXYZ  
+plaintext alphabet:  ABCDEFGHIJKLMNOPQRSTUVWXYZ  
 
-Then move each letter to the left 3 positions:  
+Then move each letter to the right 3 positions:  
 ciphertext alphabet:  XYZABCDEFGHIJKLMNOPQRSTUVW  
 
 Note that the A is shifted to the right 3 letters, and the last 3 letters of the alphabet (XYZ) have moved to the beginning.
